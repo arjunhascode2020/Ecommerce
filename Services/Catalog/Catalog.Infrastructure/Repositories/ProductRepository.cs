@@ -58,11 +58,11 @@ namespace Catalog.Infrastructure.Repositories
             return product;
         }
 
-        async Task<bool> IProductRepository.DeleteProduct(Product product)
+        async Task<bool> IProductRepository.DeleteProduct(string id)
         {
             var deleteProduct = await _context
                                      .Products
-                                     .DeleteOneAsync(p => p.Id == product.Id);
+                                     .DeleteOneAsync(p => p.Id == id);
             return deleteProduct.IsAcknowledged && deleteProduct.DeletedCount > 0;
         }
 
