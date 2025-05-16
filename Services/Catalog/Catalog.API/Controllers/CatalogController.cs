@@ -1,5 +1,4 @@
 ﻿using Catalog.Application.Commands;
-using Catalog.Application.Handlers;
 using Catalog.Application.Queries;
 using Catalog.Application.Responses;
 using Catalog.Core.Specs;
