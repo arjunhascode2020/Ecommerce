@@ -14,7 +14,7 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - redis_data:/data
+      - redis_data:/data/redisdb
 # caalog Api
   catalog.api:
     environment:
@@ -38,4 +38,13 @@ services:
       - basketdb
     ports:
       - "9001:8080"
-
+ # container management tools
+  portainer:
+     container_name: portainer
+     restart: always
+     ports:
+        - "8080:8000"
+        - "9090:9000"
+     volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - portainer_data:/data
